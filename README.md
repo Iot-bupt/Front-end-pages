@@ -11,3 +11,4 @@ thingsManage    物管理静态页面及相关资源
   》plugins.html 插件管理
   》rules.html 规则管理
   》evaluate.html  能力评估
+

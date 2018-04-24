@@ -130,20 +130,41 @@ ul,li{
     float: left;
     cursor: pointer;
 
-    box-sizing: border-box;
-
 }
 .homeIcon{
 
     color: #ffffff;
     font-size: 50px;
     margin-top: 50px;
-    margin-left: 55px;
+    margin-left: 70px;
 }
-p{
+.homeIconName{
     color: #ffffff;
     font-size: 30px;
     font-weight: bold;
     margin-top: 20px;
     text-align: center;
+}
+.chooseBtn{
+    margin-top: 50px;
+    margin-left: 50px;
+    cursor: pointer;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #305680;
+    float: left;
+    border-radius: 10px;
+    background: white;
+}
+.chooseBtn div i{
+    color: #305680;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+
+}
+.chooseBtn div p{
+    text-align: center;
+    margin-top: 10px;
 }

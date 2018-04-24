@@ -187,3 +187,27 @@ img { max-width: 100%; }
 
 }
 
+.tray {
+	border: 1px solid #1371AF;
+	padding: 12px;
+	margin-bottom: 15px;
+	border-radius: 50px;
+	color: white;
+
+	/*background: black;*/
+}
+.tray .fa {
+	color: #1371AF;
+	display: block;
+	text-align: center;
+	font-size: 5em;
+}
+.tray h3{
+	color: white;
+
+}
+
+.chooseBtn{
+	margin-top: 150px;
+
+}
