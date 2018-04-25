@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp",["ngRoute","ngAnimate"]);
+var mainApp = angular.module("mainApp",["ngRoute","ngAnimate",'ui.grid']);
 mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
@@ -13,7 +13,10 @@ mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$l
         .when("/deviceGroup",{
             templateUrl:"deviceGroup.html",
             controller:"mainCtrl"
-
+        })
+        .when("/deviceGroupAssign",{
+            templateUrl:"deviceGroupAssign.html",
+            controller:"mainCtrl"
         })
         .when("/service",{
             templateUrl:"service.html",

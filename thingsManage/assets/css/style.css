@@ -168,3 +168,27 @@ ul,li{
     text-align: center;
     margin-top: 10px;
 }
+/* =============================================================
+   DeviceGroup
+ ============================================================ */
+.gridStyle{
+    border:1px solid rgb(212,212,212);
+    margin:15px 0 0 100px;
+    width:1000px;
+}
+
+.BiaoTi{
+    margin:70px 400px 0 100px;
+    width:800px;
+
+}
+
+.But1{
+    float:left;
+    width:20px;
+    height:10px;
+}
+
+.shand{
+    cursor:pointer;
+}

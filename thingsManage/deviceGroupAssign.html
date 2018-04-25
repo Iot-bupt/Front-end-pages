@@ -1,11 +1,11 @@
-<div ng-controller="DevGroupCtl">
+<div ng-controller="GridController">
 <div class="BiaoTi">
-	<span style="font-size:30px">设备组</span>
-		<button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#mm">+ 创建设备组</button>
+	<span style="font-size:30px">关联设备</span>
+	<a href="" title="插件管理" ng-click="$location.path('deviceGroup')">返回设备组管理</a>
 </div>
 
 <!--modal删除模拟框-->
-<div class="modal fade" id="warnDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="warnDelAssign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -13,11 +13,11 @@
 					&times;
 				</button>
 				<h4 class="modal-title" id="myModalLabel">
-					删除
+					取消关联
 				</h4>
 			</div>
 			<div class="modal-body">
-				确定删除此设备组？
+				从设备组中除去此设备？
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
