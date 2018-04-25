@@ -17,7 +17,10 @@ mainApp.controller("DevGroupCtl",["$scope","$location",function($scope,$location
 		]
 		};
 	$scope.goToUpdate=function(){
-	};
+        angular.element('#editDelete').modal({
+            backdrop: false
+        });
+    };
 
 	//跳转到设备详情页
 	$scope.goToAssign=function(){

@@ -1,7 +1,7 @@
 <div ng-controller="DevGroupCtl">
 <div class="BiaoTi">
 	<span style="font-size:30px">设备组</span>
-		<button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#mm">+ 创建设备组</button>
+		<button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建设备组</button>
 </div>
 
 <!--modal删除模拟框-->
@@ -29,6 +29,58 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal -->
 </div>
+
+<!--modal添加设备模拟框-->
+<div class="modal fade" id="addDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title">
+						添加设备组
+					</h4>
+				</div>
+				<div class="modal-body">
+					<p>设备组名：</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary">
+						确定
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
+
+<!--modal编辑设备组-->
+	<div class="modal fade" id="editDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title">
+						编辑设备组
+					</h4>
+				</div>
+				<div class="modal-body">
+					<p>设备组名：</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+					</button>
+					<button type="button" class="btn btn-primary">
+						确定
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal -->
+	</div>
 
 <!--angular指令-->
 <div>
