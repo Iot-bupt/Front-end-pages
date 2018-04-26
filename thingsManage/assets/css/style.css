@@ -171,15 +171,14 @@ ul,li{
 /* =============================================================
    DeviceGroup
  ============================================================ */
-.DeviceGroup{
-    margin:30px 0 0 60px;
+.LeftView{
+    margin:30px 0 0 35px;
     float: left;
     width:650px;
 }
 
 .DGTitle{
     margin:5px 0 0 10px;
-    width:500px;
 }
 .DGContainer{
     margin:-20px 0 0 -35px;
@@ -188,19 +187,24 @@ ul,li{
 /* =============================================================
    DeviceGroupAssign
  ============================================================ */
-.DeviceGroupAssign{
+.RightView{
     position: fixed;
-    margin:35px 5px 0 700px;
-    width:475px;
-    height:800px;
+    margin:20px 5px 0 650px;
+    width:500px;
+    height:780px;
+}
+.RightviewTitle{
+    font-size: 20px;
 }
 .item{
-    margin:10px 10px 0 20px;
+    margin:10px 10px 0 10px;
 }
 .gridStyle{
     border:1px solid rgb(212,212,212);
     margin: 0 0 10px 0;
-    height: 300px;
+}
+.DGgridstyle{
+    height: 270px;
 }
 .shand{
     cursor:pointer;
@@ -210,6 +214,24 @@ ul,li{
     background-color: #fdfdfd;
     margin:5px 0 0 0;
 }
+.iedit{
+    margin-left:5px;
+}
 /* =============================================================
    Rule
  ============================================================ */
+.RulegridStyle{
+    height: 140px;
+}
+.RuleBtn{
+    width:185px ;
+    margin-left: 25px;
+    padding:15px 5px;
+}
+.ruleiconcontainer{
+    float: right;
+    margin: 10px 15px;
+}
+.ruleicon{
+    margin:0 5px;
+}

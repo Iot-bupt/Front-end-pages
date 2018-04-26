@@ -1,38 +1,38 @@
-﻿<!--左侧设备组展示视图-->
-<div ng-controller="RuleCtrl" class="Rule">
+﻿<!--左侧视图-->
+<div ng-controller="RuleCtrl" class="LeftView">
     <div class="DGTitle">
-        <span style="font-size:30px">设备组</span>
+        <span style="font-size:30px">规则管理</span>
         <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建设备组</button>
     </div>
     <div class="DGContainer">
-        <div class="chooseBtn">
+        <div class="chooseBtn RuleBtn">
             <div>
-                <i class="fa fa-bomb fa-2x " title="{{DeviceName1}}"></i>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
                 <p>System Telemetry Rule</p>
             </div>
         </div>
-        <div class="chooseBtn">
+        <div class="chooseBtn RuleBtn">
             <div>
-                <i class="fa fa-bomb fa-2x " title="{{DeviceName2}}"></i>
-                <p>System Telemetry Rule</p>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Demo Device Messaging RPC Plugin</p>
             </div>
         </div>
-        <div class="chooseBtn">
+        <div class="chooseBtn RuleBtn">
             <div>
-                <i class="fa fa-bomb fa-2x " title="{{DeviceName1}}"></i>
-                <p>System Telemetry Rule</p>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Demo Email Plugin</p>
             </div>
         </div>
-        <div class="chooseBtn">
+        <div class="chooseBtn RuleBtn">
             <div>
-                <i class="fa fa-bomb fa-2x " title="{{DeviceName1}}"></i>
-                <p>System Telemetry Rule</p>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Demo Time RPC Plugin</p>
             </div>
         </div>
-        <div class="chooseBtn">
+        <div class="chooseBtn RuleBtn">
             <div>
-                <i class="fa fa-bomb fa-2x " title="{{DeviceName1}}"></i>
-                <p>System Telemetry Rule</p>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Age RPC Plugin</p>
             </div>
         </div>
     </div>
@@ -116,19 +116,37 @@
         </div><!-- /.modal -->
     </div>
 </div>
-<!--右侧关联设备视图-->
-<div class="DeviceGroupAssign">
+<!--右侧视图-->
+<div class="RightView">
     <div class="DGAssignContainer">
         <div class="DGTitle">
-            <span style="font-size:20px">规则信息</span>
+            <span class="RightviewTitle">规则信息</span>
+            <div class="ruleiconcontainer">
+                <i class="fa fa-play fa-lg ruleicon shand"></i>
+                <i class="fa fa-trash-o fa-lg ruleicon shand"></i>
+                <i class="fa fa-ban fa-lg ruleicon shand"></i>
+            </div>
         </div>
         <div class="item">
-            <p>
-                规则名称：System Telemetry Rule
-                <i class="fa fa-pencil-square-o" id="DGNameedit"></i>
-            </p>
-            <p>创建时间：		2018-01-26 15:40:26</p>
+            <p>规则名称：System Telemetry Rule<i class="fa fa-pencil-square-o iedit shand"></i></p>
+            <p>描述：此规则用于测量环境温度<i class="fa fa-pencil-square-o iedit shand"></i></p>
+            <p>创建时间：2018-01-26 15:40:26</p>
             <p>当前状态：ACTIVE</p>
+        </div>
+    </div>
+    <div class="DGAssignContainer">
+        <div class="DGTitle">
+            <span class="RightviewTitle">规则详情</span>
+        </div>
+        <div class="item">
+
+            <div class="item" ng-controller="RulepluginCtrl">
+                <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
+            </div>
+
+            <div class="item" ng-controller="RulefilterCtrl">
+                <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
+            </div>
         </div>
 
     </div>
