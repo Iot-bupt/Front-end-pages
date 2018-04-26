@@ -171,24 +171,45 @@ ul,li{
 /* =============================================================
    DeviceGroup
  ============================================================ */
+.DeviceGroup{
+    margin:30px 0 0 60px;
+    float: left;
+    width:650px;
+}
+
+.DGTitle{
+    margin:5px 0 0 10px;
+    width:500px;
+}
+.DGContainer{
+    margin:-20px 0 0 -35px;
+}
+
+/* =============================================================
+   DeviceGroupAssign
+ ============================================================ */
+.DeviceGroupAssign{
+    position: fixed;
+    margin:35px 5px 0 700px;
+    width:475px;
+    height:800px;
+}
+.item{
+    margin:10px 10px 0 20px;
+}
 .gridStyle{
     border:1px solid rgb(212,212,212);
-    margin:15px 0 0 100px;
-    width:1000px;
+    margin: 0 0 10px 0;
+    height: 300px;
 }
-
-.BiaoTi{
-    margin:70px 400px 0 100px;
-    width:800px;
-
-}
-
-.But1{
-    float:left;
-    width:20px;
-    height:10px;
-}
-
 .shand{
     cursor:pointer;
 }
+.DGAssignContainer{
+    border:1px solid rgb(212,212,212);
+    background-color: #fdfdfd;
+    margin:5px 0 0 0;
+}
+/* =============================================================
+   Rule
+ ============================================================ */

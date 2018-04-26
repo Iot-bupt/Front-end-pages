@@ -1,10 +1,11 @@
-mainApp.controller("GridController",function($scope){
+mainApp.controller("GridCtrl",function($scope){
 	$scope.myData=[{name: "天猫",style:"传感器"},
 					{name: "阿里宝宝",style:"传感器"},
 					{name: "百度",style:"蓝牙"},
 					{name: "腾讯",style:"传感器"}];
 	$scope.gridOptions={
 		data: 'myData',
+        enableHorizontalScrollbar : 0,
 		columnDefs: [
 		{field: 'name',displayName: '设备名称'},
 		{field: 'style',displayName: '设备类型'},

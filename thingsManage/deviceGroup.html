@@ -1,8 +1,42 @@
-<div ng-controller="DevGroupCtl">
-<div class="BiaoTi">
-	<span style="font-size:30px">设备组</span>
-		<button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建设备组</button>
-</div>
+<!--左侧设备组展示视图-->
+<div ng-controller="DevGroupCtrl" class="DeviceGroup">
+    <div class="DGTitle">
+	    <span style="font-size:30px">设备组</span>
+		    <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建设备组</button>
+    </div>
+	<div class="DGContainer">
+		<div class="chooseBtn">
+			<div>
+				<i class="fa fa-sitemap fa-2x " title="{{DeviceName1}}"></i>
+				<p>{{DeviceName1}}</p>
+			</div>
+		</div>
+		<div class="chooseBtn">
+			<div>
+				<i class="fa fa-sitemap fa-2x " title="{{DeviceName2}}"></i>
+				<p>{{DeviceName2}}</p>
+			</div>
+		</div>
+		<div class="chooseBtn">
+			<div>
+				<i class="fa fa-sitemap fa-2x " title="{{DeviceName1}}"></i>
+				<p>{{DeviceName1}}</p>
+			</div>
+		</div>
+		<div class="chooseBtn">
+			<div>
+				<i class="fa fa-sitemap fa-2x " title="{{DeviceName1}}"></i>
+				<p>{{DeviceName1}}</p>
+			</div>
+		</div>
+		<div class="chooseBtn">
+			<div>
+				<i class="fa fa-sitemap fa-2x " title="{{DeviceName1}}"></i>
+				<p>{{DeviceName1}}</p>
+			</div>
+		</div>
+	</div>
+
 
 <!--modal删除模拟框-->
 <div class="modal fade" id="warnDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -57,7 +91,7 @@
 	</div>
 
 <!--modal编辑设备组-->
-	<div class="modal fade" id="editDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="editDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -81,9 +115,58 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal -->
 	</div>
-
-<!--angular指令-->
-<div>
-	<div class="gridStyle" ui-grid="gridOptions"></div>
 </div>
+<!--右侧关联设备视图-->
+<div ng-controller="GridCtrl" class="DeviceGroupAssign">
+	<div class="DGAssignContainer">
+		<div class="DGTitle">
+			<span style="font-size:20px">设备组信息</span>
+		</div>
+		<div class="item">
+			<p>
+				设备组名：LIANG
+				<i class="fa fa-pencil-square-o" id="DGNameedit"></i>
+			</p>
+			<p>创建时间：	2018-04-13 15:57:55</p>
+			<p>设备组ID：5ffa1c20-3ef0-11e8-8ea3-6dcd3accf4d6</p>
+		</div>
+
+	</div>
+
+
+	<div class="DGAssignContainer">
+		<div class="DGTitle">
+        	<span style="font-size:20px">关联设备列表</span>
+		</div>
+   		<!--modal删除模拟框-->
+		<div class="modal fade" id="warnDelAssign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        取消关联
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    从设备组中除去此设备？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+   		<!--angular指令-->
+    	<div class="item">
+        	<div class="gridStyle" ui-grid="gridOptions"></div>
+    	</div>
+	</div>
 </div>

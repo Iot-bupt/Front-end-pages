@@ -14,10 +14,6 @@ mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$l
             templateUrl:"deviceGroup.html",
             controller:"mainCtrl"
         })
-        .when("/deviceGroupAssign",{
-            templateUrl:"deviceGroupAssign.html",
-            controller:"mainCtrl"
-        })
         .when("/service",{
             templateUrl:"service.html",
             controller:"mainCtrl"
