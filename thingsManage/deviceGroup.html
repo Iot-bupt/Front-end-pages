@@ -8,7 +8,7 @@
             </button>
         </div>
         <div class="DGContainer" ng-repeat="DG in DeviceGroups">
-            <div class="chooseBtn">
+            <div class="chooseBtn" ng-click="show(DG)">
                 <div>
                     <i class="fa fa-sitemap fa-2x "></i>
                     <p>{{DG.name}}</p>
@@ -58,34 +58,7 @@
                         </h4>
                     </div>
                     <div class="modal-body">
-                        <p>设备组名：<input type="text" name="DevicegroupName" value="LIANG"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                            确定
-                        </button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal -->
-        </div>
-
-        <!--modal编辑设备组-->
-        <div class="modal fade" id="editDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            &times;
-                        </button>
-                        <h4 class="modal-title">
-                            编辑设备组
-                        </h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>设备组名：</p>
+                        <p>设备组名：<input type="text" name="DevicegroupName" placeholder="LIANG"></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">关闭
@@ -103,16 +76,19 @@
         <div class="DGAssignContainer">
             <div class="DGTitle">
                 <span class="RightviewTitle">设备组信息</span>
+                <div class="ruleiconcontainer" data-toggle="modal" data-target="#delDG">
+                    <i class="fa fa-trash-o fa-lg ruleicon shand" ></i>
+                </div>
             </div>
             <div class="item">
                 <p>
-                    设备组名：LIANG
-                    <i class="fa fa-pencil-square-o iedit shand"></i>
-                </p>
-                <p>创建时间：2018-04-13 15:57:55</p>
-                <p>设备组ID：5ffa1c20-3ef0-11e8-8ea3-6dcd3accf4d6</p>
+                    设备组名：{{item.name}}
+                    <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                       data-target="#editDGName"></i>
+                    </p.time}}</p>
+                <p>创建时间：{{item.time}}</p>
+                <p>设备组ID：{{item.id}}</p>
             </div>
-
         </div>
 
 
@@ -120,37 +96,120 @@
             <div class="DGTitle">
                 <span class="RightviewTitle">关联设备列表</span>
             </div>
-            <!--modal删除模拟框-->
-            <div class="modal fade" id="warnDelAssign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title" id="myModalLabel">
-                                取消关联
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            从设备组中除去此设备？
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                            </button>
-                            <button type="button" class="btn btn-primary">
-                                确定
-                            </button>
-                        </div>
-                    </div><!-- /.modal-content -->
-                </div><!-- /.modal -->
-            </div>
-
             <!--angular指令-->
             <div class="item">
                 <div class="gridStyle DGgridStyle" ui-grid="gridOptions"></div>
             </div>
         </div>
+        <!--modal从设备组中删除设备in grid-->
+        <div class="modal fade" id="warnDelAssign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            取消关联
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        从设备组中除去此设备？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!--modal从设备组中添加设备in grid-->
+        <div class="modal fade" id="warnAddAssign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            添加关联
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        将此设备添加到设备组？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+
+        <!--modal删除设备组-->
+        <div class="modal fade" id="delDG" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            删除设备组
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        确定删除此设备组？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!--modal编辑设备组名-->
+        <div class="modal fade" id="editDGName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            编辑设备组
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>设备组名：<input type="text" name="NewDGName" value={{item.name}}></input>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
     </div>
 </div>
