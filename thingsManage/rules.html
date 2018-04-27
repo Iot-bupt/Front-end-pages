@@ -1,128 +1,244 @@
-﻿<!DOCTYPE html>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>BEST ADMIN TEMPLATE</title>
-    <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- GOOGLE FONT CSS -->
-     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
-
-</head>
-<body>
-   <!--  <section class="sec-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="assets/img/logo-vrinda.png" alt="Free Best Admin Made Of Bootstrap" />
-                </div>
-                <div class="col-md-7">
-                </div>
-                <div class="col-md-3 quick-info">
-                  Support :<i> info@yourdomain.com</i> <br />
-                    Call : <i>+01-345-908-55-89</i>
-                </div>
+﻿<!--左侧视图-->
+<div ng-controller="RuleCtrl" class="LeftView">
+    <div class="DGTitle">
+        <span style="font-size:30px">规则管理</span>
+        <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建规则</button>
+    </div>
+    <div class="DGContainer">
+        <div class="chooseBtn RuleBtn">
+            <div>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>System Telemetry Rule</p>
             </div>
         </div>
-    </section>-->
-    <!--LOGO SECTION END-->
-     <section class="sec-menu" >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-              <span class="menu-open-icon">  <i class="fa fa-bars pull-left fa-2x b-clr"   ></i> </span>  <i class="pull-right">欢迎来到物管理平台</i>
-                </div>
+        <div class="chooseBtn RuleBtn">
+            <div>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Demo Device Messaging RPC Plugin</p>
             </div>
         </div>
-    </section>
-       <div id="side-menu"  >
-
-         <ul  >
-             <li style="border-bottom:0px;">
-             <a href="#" title="close"> <i class="fa fa-close fa-2x menu-close-icon b-clr"></i></a>
-            </li>
-             <li class="side-menu-icon">
-                 <a href="homePage.html" title="首页"> <i class="fa fa-home fa-2x "></i> </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="deviceList.html" title="设备列表"> <i class="fa fa-file-text-o fa-2x "></i> </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="deviceGroup.html" title="设备组"> <i class="fa fa-cubes fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="service.html" title="服务管理"><i class="fa fa-cog fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="plugins.html" title="插件管理"> <i class="fa fa-plug fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="rules.html" title="规则管理"> <i class="fa fa-link fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="evaluate.html" title="能力评估"> <i class="fa fa-line-chart fa-2x "></i>  </a>
-             </li>
-            
-        </ul>
-           
-    </div>
-    <!--MENU SECTION END-->
-     <div class="content-wrapper">
-         <div class="container">
-        <div class="row pad-botm">
-            <div class="col-md-12">
-                <h4 class="header-line">BLANK PAGE</h4>
-                
-                            </div>
-
-        </div>
-             <div class="row">
-            <div class="col-md-12">
-               <div class="alert alert-success">
-This is blank page for your customization. So use this page and start your project now.
-                   <br />
-                   Happy downloading 
-                   <br />
-                  Keep Looking <a target="_blank" href="http://#/" >binarytheme.com</a> for cool stuff.
-               </div>
-                            </div>
-
-        </div>  
-    </div>
-    </div>
-     <!-- CONTENT-WRAPPER SECTION END-->
-    <section class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                   &copy; 2014 Yourdomain.com |More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> 
-                </div>
-
+        <div class="chooseBtn RuleBtn">
+            <div>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Demo Email Plugin</p>
             </div>
         </div>
-    </section>
-      <!-- FOOTER SECTION END-->
+        <div class="chooseBtn RuleBtn">
+            <div>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Demo Time RPC Plugin</p>
+            </div>
+        </div>
+        <div class="chooseBtn RuleBtn">
+            <div>
+                <i class="fa fa-puzzle-piece fa-2x "></i>
+                <p>Age RPC Plugin</p>
+            </div>
+        </div>
+    </div>
 
-    
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  -->
-    <script src="assets/js/jquery-1.11.1.js"></script>
-   <!--ICON SCRIPTS-->
-   <script type="text/javascript" src="assets/js/icon.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="assets/js/bootstrap.js"></script>
-     <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
-</body>
-</html>
+
+    <!--modal删除模拟框-->
+    <div class="modal fade" id="warnDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        删除
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确定删除此设备组？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!--modal创建规则-->
+    <div class="modal fade" id="addDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        添加规则
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>规则名称：<input type="text" name="DevicegroupName" placeholder="Demo Device Messaging RPC Plugin"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!--modal编辑设备组-->
+    <div class="modal fade" id="editDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        编辑设备组
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>设备组名：</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<!--右侧视图-->
+<div class="RightView">
+    <div class="DGAssignContainer">
+        <div class="DGTitle">
+            <span class="RightviewTitle">规则信息</span>
+            <div class="ruleiconcontainer">
+                <i class="fa fa-play fa-lg ruleicon shand"></i>
+                <i class="fa fa-pause fa-lg ruleicon shand"></i>
+                <i class="fa fa-trash-o fa-lg ruleicon shand" data-toggle="modal"
+                   data-target="#delRule"></i>
+            </div>
+        </div>
+        <div class="item">
+            <p>规则名称：System Telemetry Rule
+                <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                   data-target="#editRuleName"></i></p>
+            <p>描述：此规则用于测量环境温度
+                <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                   data-target="#editRuleDes"></i></p>
+            <p>创建时间：2018-01-26 15:40:26</p>
+            <p>当前状态：ACTIVE</p>
+        </div>
+    </div>
+    <div class="DGAssignContainer">
+        <div class="DGTitle">
+            <span class="RightviewTitle">规则详情</span>
+        </div>
+        <div class="item">
+
+            <div class="item" ng-controller="RulepluginCtrl">
+                <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
+            </div>
+
+            <div class="item" ng-controller="RulefilterCtrl">
+                <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--modal编辑规则名称-->
+    <div class="modal fade" id="editRuleName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        编辑规则名称
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>规则名：<input type="text" name="NewDGName" value="System Telemetry Rule"></input>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!--modal编辑规则描述-->
+    <div class="modal fade" id="editRuleDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        编辑规则描述
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>规则名称：System Telemetry Rule</p>
+                    <p>规则描述：<input type="text" name="NewDGName" id="RuleModalInput"></input>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <!--modal删除设备组-->
+    <div class="modal fade" id="delRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        删除规则
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确定删除此规则？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</div>
