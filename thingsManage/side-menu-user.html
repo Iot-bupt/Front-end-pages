@@ -15,10 +15,13 @@
     <!-- CUSTOM STYLE CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
+    <link href='assets/css/font-Lobster.css' rel='stylesheet' type='text/css' />
+
+    <!-- MAIN ANGULAR SCRIPT -->
     <script type="text/javascript" src="assets/js/angular.js"></script>
     <script type="text/javascript" src="assets/js/angular-route.js"></script>
     <script type="text/javascript" src="assets/js/angular-animate.js"></script>
+    <script type="text/javascript" src="assets/js/angular-resource.js"></script>
     <script type="text/javascript" src="assets/js/mainCtrl.js"></script>
     <script type="text/javascript" src="assets/js/homePageCtrl.js"></script>
     <script type="text/javascript" src="assets/js/deviceListCtrl.js"></script>
@@ -27,20 +30,34 @@
 
      <section class="sec-menu" >
         <div class="container">
-            <span><a href="../login/chooseIndex.html" ><i class="fa fa-reply" style="position: absolute;left: 30px;top:30px;cursor: pointer;color: #ffffff"></i></a></span>
-            <div class="row">
-                <div class="col-md-12">
+            <div class="row" id="head-menu">
+                <div class="col-md-1 col-sm-1">
+                    <span><a href="../login/chooseIndex.html" ><i class="fa fa-reply" id="backIcon"></i></a></span>
+                </div>
+                <div class="col-md-1 col-sm-1">
                     <span class="menu-open-icon">
                         <i class="fa fa-bars pull-left fa-2x b-clr"></i>
                     </span>
-                    <i class="pull-right"> 欢迎来到物管理平台 </i>
                 </div>
-                <input type="button" class="btn btn-danger" value="退出登录" style="position: absolute;right: 10px;"/>
+                <div class="col-md-4 col-sm-12"></div>
+                <div class="col-md-5 col-sm-12" >
+                    <i class="pull-right"> 欢迎来到物管理平台 &nbsp;&nbsp;</i>
+                </div>
+                <div class="col-md-1 col-sm-12">
+                    <a href="../home.html"><input type="button" class="btn btn-danger" value="退出登录" id="quit"/></a>
+                </div>
             </div>
+            <!--<div class="row">
+                <div class="col-md-12">
+
+
+                </div>
+
+            </div>-->
         </div>
     </section>
-       <div id="side-menu">
 
+     <div id="side-menu">
         <ul>
              <li style="border-bottom:0px;">
              <a href="#" title="close"> <i class="fa fa-close fa-2x menu-close-icon b-clr"></i></a>

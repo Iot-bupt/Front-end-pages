@@ -1,49 +1,41 @@
 ﻿<div class="content-wrapper" ng-controller="deviceListCtrl">
     <div class="container">
 
-             <div class="chooseBtn" data-toggle="modal" data-target="#myModel">
+             <div class="chooseBtn" data-toggle="modal" data-target="#myModal" ng-repeat="arr in data">
                  <div>
-                     <i class="fa fa-file-text-o fa-2x " title="设备{{num}}"></i>
-                     <p>设备{{num}}</p>
+                     <i class="fa fa-file-text-o fa-2x " title="设备{{$index+1}}"></i>
+                     <p>{{arr.deviceName}}</p>
                  </div>
              </div>
-             <div class="chooseBtn" data-toggle="modal" data-target="#myModel">
-                 <div>
-                     <i class="fa fa-file-text-o fa-2x " title="设备{{num}}"></i>
-                     <p>设备{{num}}</p>
-                 </div>
-             </div>
-             <div class="chooseBtn" data-toggle="modal" data-target="#myModel">
-                 <div>
-                     <i class="fa fa-file-text-o fa-2x " title="设备{{num}}"></i>
-                     <p>设备{{num}}</p>
-                 </div>
-             </div>
+
     </div>
 </div>
     <!-- CONTENT-WRAPPER SECTION END-->
 
-     <!--  MODEL  -->
-     <div class="modal fade" tabindex="-1" role="dialog" id="myModel" ng-controller="deviceListCtrl">
-         <!--.modal:指定为模态框      fade:淡入淡出效果     tabindex="-1":不受tab键控制    role="dialog":指定模态框为对话框-->
-         <div class="modal-dialog" role="document">
-             <div class="modal-content">
-                 <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                     <h4 class="modal-title">设备{{num}}</h4>
-                 </div>
-                 <div class="modal-body">
-                     <p>设备名称：</p>
-                     <p>类型：</p>
-                     <p>描述：</p>
-                     <p>创建时间：</p>
-                     <p>状态：</p>
-                     <p>操作：</p>
-                 </div>
-                 <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                     <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
-                 </div>
-             </div><!-- /.modal-content -->
-         </div><!-- /.modal-dialog -->
-     </div><!-- /.modal -->
+<!--  MODEL  -->
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal" ng-controller="deviceListCtrl">
+    <!--.modal:指定为模态框      fade:淡入淡出效果     tabindex="-1":不受tab键控制    role="dialog":指定模态框为对话框-->
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{data[0].deviceType}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>设备名称：{{data[0].deviceName}}</p>
+                <p>类型：{{data[0].deviceType}}</p>
+                <p>描述：{{data[0].description}}</p>
+                <p>创建时间：{{data[0].createTime}}</p>
+                <p>状态：{{data[0].status}}</p>
+                <p>操作：<button class="btn btn-success">取消分配客户</button>
+                    <button class="btn btn-warning">管理凭据</button>
+                    <button class="btn btn-danger">删除设备</button>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

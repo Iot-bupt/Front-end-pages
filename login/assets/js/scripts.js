@@ -1,10 +1,9 @@
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
 	
     /*
         Fullscreen background
     */
-    //$.backstretch("assets/img/backgrounds/1.jpg");
     $.backstretch([
         "assets/img/backgrounds/1.jpg"
         , "assets/img/backgrounds/3.jpg"
@@ -32,6 +31,5 @@ jQuery(document).ready(function() {
     	});
     	
     });
-    
-    
+
 });
