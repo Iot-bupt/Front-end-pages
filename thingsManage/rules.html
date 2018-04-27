@@ -2,7 +2,7 @@
 <div ng-controller="RuleCtrl" class="LeftView">
     <div class="DGTitle">
         <span style="font-size:30px">规则管理</span>
-        <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建设备组</button>
+        <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addDeviceGroup">+ 创建规则</button>
     </div>
     <div class="DGContainer">
         <div class="chooseBtn RuleBtn">
@@ -64,7 +64,7 @@
         </div><!-- /.modal -->
     </div>
 
-    <!--modal添加设备模拟框-->
+    <!--modal创建规则-->
     <div class="modal fade" id="addDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -73,11 +73,11 @@
                         &times;
                     </button>
                     <h4 class="modal-title">
-                        添加设备组
+                        添加规则
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <p>设备组名：</p>
+                    <p>规则名称：<input type="text" name="DevicegroupName" placeholder="Demo Device Messaging RPC Plugin"></p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭
@@ -123,13 +123,18 @@
             <span class="RightviewTitle">规则信息</span>
             <div class="ruleiconcontainer">
                 <i class="fa fa-play fa-lg ruleicon shand"></i>
-                <i class="fa fa-trash-o fa-lg ruleicon shand"></i>
-                <i class="fa fa-ban fa-lg ruleicon shand"></i>
+                <i class="fa fa-pause fa-lg ruleicon shand"></i>
+                <i class="fa fa-trash-o fa-lg ruleicon shand" data-toggle="modal"
+                   data-target="#delRule"></i>
             </div>
         </div>
         <div class="item">
-            <p>规则名称：System Telemetry Rule<i class="fa fa-pencil-square-o iedit shand"></i></p>
-            <p>描述：此规则用于测量环境温度<i class="fa fa-pencil-square-o iedit shand"></i></p>
+            <p>规则名称：System Telemetry Rule
+                <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                   data-target="#editRuleName"></i></p>
+            <p>描述：此规则用于测量环境温度
+                <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                   data-target="#editRuleDes"></i></p>
             <p>创建时间：2018-01-26 15:40:26</p>
             <p>当前状态：ACTIVE</p>
         </div>
@@ -150,4 +155,90 @@
         </div>
 
     </div>
+
+    <!--modal编辑规则名称-->
+    <div class="modal fade" id="editRuleName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        编辑规则名称
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>规则名：<input type="text" name="NewDGName" value="System Telemetry Rule"></input>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!--modal编辑规则描述-->
+    <div class="modal fade" id="editRuleDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        编辑规则描述
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>规则名称：System Telemetry Rule</p>
+                    <p>规则描述：<input type="text" name="NewDGName" id="RuleModalInput"></input>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <!--modal删除设备组-->
+    <div class="modal fade" id="delRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        删除规则
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    确定删除此规则？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
 </div>

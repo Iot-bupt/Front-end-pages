@@ -235,3 +235,8 @@ ul,li{
 .ruleicon{
     margin:0 5px;
 }
+#RuleModalInput{
+    margin-top: 15px;
+    width: 450px;
+    height: 125px;
+}

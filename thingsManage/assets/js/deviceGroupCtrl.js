@@ -9,8 +9,9 @@ mainApp.controller("DevGroupCtrl", ["$scope", function ($scope) {
     ];
     //展示设备组详情
     $scope.show = function (DG) {
-        $scope.item = {name: DG.name, time: DG.time, id: DG.id};
         //console.log(DG.name);
+        $scope.item = {name: DG.name, time: DG.time, id: DG.id};
+
     };
 
     //ui-grid的js部分
