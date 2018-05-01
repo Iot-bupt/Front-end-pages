@@ -174,14 +174,29 @@ ul,li{
 .LeftView{
     margin:30px 0 0 35px;
     float: left;
-    width:650px;
+    width:600px;
 }
 
 .DGTitle{
     margin:5px 0 0 10px;
+    height: 60px;
+}
+.DGminTitle{
+    height: 20px;
 }
 .DGContainer{
-    margin:-20px 0 0 -35px;
+    margin: -30px 0px 0 -30px;
+}
+.SearchDG{
+    float: right;
+    height: 20px;
+    margin-top: 10px;
+    margin-right:20px;
+    width: 180px;
+}
+.Searchicon{
+    margin-left: -25px;
+    color:#adadad;
 }
 
 /* =============================================================
@@ -189,7 +204,7 @@ ul,li{
  ============================================================ */
 .RightView{
     position: fixed;
-    margin:20px 5px 0 650px;
+    margin:20px 5px 0 670px;
     width:500px;
     height:780px;
 }
@@ -224,13 +239,13 @@ ul,li{
     height: 140px;
 }
 .RuleBtn{
-    width:185px ;
+    width:175px ;
     margin-left: 25px;
     padding:15px 5px;
 }
 .ruleiconcontainer{
     float: right;
-    margin: 10px 15px;
+    margin: 5px 10px;
 }
 .ruleicon{
     margin:0 5px;

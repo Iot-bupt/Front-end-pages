@@ -1,5 +1,5 @@
-var mainApp = angular.module("mainApp",["ngRoute","ngAnimate",'ui.grid']);
-mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$locationProvider) {
+var mainApp = angular.module("mainApp",["ngRoute","ngAnimate",'ui.grid','ngResource']);
+mainApp.config(["$routeProvider","$locationProvider","$httpProvider",function ($routeProvider,$locationProvider,$httpProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
         .when("/homePage", {
@@ -33,7 +33,20 @@ mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$l
         .otherwise({
             redirectTo:"/homePage"
         });
+
+    //解决跨域问题
+    //$httpProvider.defaults.transformRequest=function(obj){
+     //   var arrStr=[];
+    //    for(var p in obj){
+    //        arrStr.push(encodeURIComponent(p)+"="+encodeURIComponent(obj[p]));
+    //    }
+   //     return arrStr.join("&");};
+    //$httpProvider.defaults.headers.common={'Content-Type':'application/x-www-form-urlencoded'};
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }]);
+
 mainApp.controller("mainCtrl",["$scope","$location",function ($scope,$location) {
     /*路由跳转*/
     $scope.$location = $location;
