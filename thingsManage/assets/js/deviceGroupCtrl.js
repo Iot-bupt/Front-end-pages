@@ -77,7 +77,6 @@ mainApp.controller("DevGroupCtrl", function ($scope, $resource) {
     $scope.show = function (DG) {
         //console.log(DG.name);
         $scope.item = {name: DG.name, time: DG.time, id: DG.id};
-
     };
 
     //ui-grid的js部分

@@ -1,12 +1,13 @@
 mainApp.controller("RulepluginCtrl",function($scope){
-    $scope.myData=[{name: "System RPC Plugin"},
-        {name: "System Telemetry Plugin"},
-        {name: "Mail Plugin"},
-        {name: "Device Control Plugin"}
-    ];
-    $scope.gridOptions={
+
+    $scope.myData=[{pluginToken:""}];
+    $scope.$on('senddata',function(e,rule) {
+        $scope.myData =[rule];
+    });//父子控制器间通信问题
+
+        $scope.gridOptions={
         data: 'myData',
         enableHorizontalScrollbar : 0,
         columnDefs: [
-            {field: 'name',displayName: '插件名称'}]};
+            {field: 'pluginToken',displayName: '插件Token'}]};
 });

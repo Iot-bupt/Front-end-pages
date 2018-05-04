@@ -1,10 +1,15 @@
 mainApp.controller("RulefilterCtrl",function($scope){
-    $scope.myData=[{name: "TemperatureFilter",style:"Device Telemetry Filter"},
-        {name: "MsgTypeFilter",style:"Message Type Filter"}];
+    $scope.myData=[{filters:""}];
+    $scope.$on('senddata',function(e,rule) {
+        $scope.myData =rule.filters;
+    });//父子控制器间通信问题
+
+
     $scope.gridOptions={
         data: 'myData',
         enableHorizontalScrollbar : 0,
         columnDefs: [
-            {field: 'name',displayName: '过滤器名称'},
-            {field: 'style',displayName: '过滤器类型'}]};
+            {field: 'filter',displayName: '过滤器名称'}
+           ]};
+
 });

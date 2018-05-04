@@ -1,258 +1,257 @@
-﻿<!--左侧视图-->
-<div ng-controller="RuleCtrl" class="LeftView">
-    <div class="DGTitle">
-        <span style="font-size:30px">规则管理</span>
-        <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal"
-                data-target="#addDeviceGroup">+ 创建规则
-        </button>
-        <div class="SearchDG">
-                <span>搜索：<input type="text" style="width: 130px" placeholder="LIANG"/>
+﻿<div ng-controller="RuleCtrl">
+    <!--左侧视图-->
+    <div class="LeftView">
+        <div class="DGTitle">
+            <span style="font-size:30px">规则管理</span>
+            <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal"
+                    data-target="#addDeviceGroup">+ 创建规则
+            </button>
+            <div class="SearchDG">
+                <span>搜索：<input type="text" style="width: 130px" placeholder="请输入规则id" ng-model="$parent.ruleid"/></span>
+                <span class="Searchicon" ng-click="searchRule()" title="搜索">
+                    <i class="fa fa-search fa-lg shand" aria-hidden="true"></i>
                 </span>
-            <span class="Searchicon">
-                    <i class="fa fa-search fa-lg" aria-hidden="true"></i>
-                </span>
-        </div>
-
-    </div>
-    <div class="DGContainer" style="margin-left: -15px">
-        <div class="chooseBtn RuleBtn">
-            <div>
-                <i class="fa fa-puzzle-piece fa-2x "></i>
-                <p>System Telemetry Rule</p>
-            </div>
-        </div>
-        <div class="chooseBtn RuleBtn">
-            <div>
-                <i class="fa fa-puzzle-piece fa-2x "></i>
-                <p>Demo Device Messaging RPC Plugin</p>
-            </div>
-        </div>
-        <div class="chooseBtn RuleBtn">
-            <div>
-                <i class="fa fa-puzzle-piece fa-2x "></i>
-                <p>Demo Email Plugin</p>
-            </div>
-        </div>
-        <div class="chooseBtn RuleBtn">
-            <div>
-                <i class="fa fa-puzzle-piece fa-2x "></i>
-                <p>Demo Time RPC Plugin</p>
-            </div>
-        </div>
-        <div class="chooseBtn RuleBtn">
-            <div>
-                <i class="fa fa-puzzle-piece fa-2x "></i>
-                <p>Age RPC Plugin</p>
-            </div>
-        </div>
-    </div>
-
-
-    <!--modal删除模拟框-->
-    <div class="modal fade" id="warnDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        删除
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    确定删除此设备组？
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-
-    <!--modal创建规则-->
-    <div class="modal fade" id="addDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">
-                        添加规则
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <p>规则名称：<input type="text" name="DevicegroupName" placeholder="Demo Device Messaging RPC Plugin">
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-
-    <!--modal编辑设备组-->
-    <div class="modal fade" id="editDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">
-                        编辑设备组
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <p>设备组名：</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-</div>
-<!--右侧视图-->
-<div class="RightView">
-    <div class="DGAssignContainer">
-        <div class="DGTitle DGminTitle">
-            <span class="RightviewTitle">规则信息</span>
-            <div class="ruleiconcontainer">
-                <i class="fa fa-play fa-lg ruleicon shand"></i>
-                <i class="fa fa-pause fa-lg ruleicon shand"></i>
-                <i class="fa fa-trash-o fa-lg ruleicon shand" data-toggle="modal"
-                   data-target="#delRule"></i>
-            </div>
-        </div>
-        <div class="item">
-            <p>规则名称：System Telemetry Rule
-                <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
-                   data-target="#editRuleName"></i></p>
-            <p>描述：此规则用于测量环境温度
-                <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
-                   data-target="#editRuleDes"></i></p>
-            <p>创建时间：2018-01-26 15:40:26</p>
-            <p>当前状态：ACTIVE</p>
-        </div>
-    </div>
-    <div class="DGAssignContainer">
-        <div class="DGTitle DGminTitle">
-            <span class="RightviewTitle">规则详情</span>
-        </div>
-        <div class="item">
-
-            <div class="item" ng-controller="RulepluginCtrl">
-                <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
             </div>
 
-            <div class="item" ng-controller="RulefilterCtrl">
-                <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
+        </div>
+        <div class="DGContainer" style="margin-left: -15px">
+            <div ng-repeat="rule in Rules" ng-show="showAllRule">
+                <!--由于jq选择器和ng-repeat执行顺序问题，此处jq里定义的mousemove动画失效-->
+                <div class="chooseBtn RuleBtn" ng-click="showrule(rule)">
+                    <div>
+                        <i class="fa fa-puzzle-piece fa-2x "></i>
+                        <p>{{rule.name}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--搜索展示视图-->
+            <div ng-show="showInfoRule">
+                <div class="chooseBtn RuleBtn" ng-click="showrule(searchresult)">
+                    <div>
+                        <i class="fa fa-puzzle-piece fa-2x "></i>
+                        <p>{{searchresult.name}}</p>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!--modal创建规则-->
+        <div class="modal fade" id="addDeviceGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            添加规则
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>规则名称：<input type="text" name="DevicegroupName"
+                                       placeholder="Demo Device Messaging RPC Plugin">
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
     </div>
+    <!--右侧视图-->
+    <div class="RightView">
+        <div class="DGAssignContainer">
+            <div class="DGTitle DGminTitle">
+                <span class="RightviewTitle">规则信息</span>
+                <div class="ruleiconcontainer">
+                    <i class="fa fa-power-off fa-lg ruleicon shand" ng-show="Rulestart" title="激活规则"
+                       data-toggle="modal" data-target="#startRule"></i>
+                    <i class="fa fa-ban fa-lg ruleicon shand" ng-show="Rulestop" title="暂停规则"
+                       data-toggle="modal" data-target="#stopRule"></i>
+                    <i class="fa fa-trash-o fa-lg ruleicon shand" title="删除此规则"
+                       data-toggle="modal" data-target="#delRule"></i>
+                </div>
+            </div>
+            <div class="item">
+                <p>规则名称：{{Ruleitem.name}}<!--规则名称修改按钮
+                    <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                       data-target="#editRuleName"></i>
+                    </p.time}}  无此接口--></p>
+                <p>规则ID：{{Ruleitem.id.id}}</p>
+                <p>状态：<span ng-class="{true:'stateActive',false:'stateNActive'}[isActive]">
+                   {{Ruleitem.state}}
+                    <i ng-class="{true:'fa fa-refresh fa-spin',false:'fa fa-refresh'}[isActive]"></i>
+                    </span></p>
+                <p>规则描述：{{Ruleitem.additionalInfo}}<!--规则描述修改按钮
+                    <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
+                       data-target="#editRuleDes"></i>
+                    </p.time}}   无此接口--></p>
+                <!--p>ACTION：{{Ruleitem.action}}</p-->
+                <!--p>创建时间：{{Ruleitem.createdTime}}</p-->
+                <!--显示信息待完善-->
+            </div>
+        </div>
+        <div class="DGAssignContainer">
+            <div class="DGTitle DGminTitle">
+                <span class="RightviewTitle">规则详情</span>
+            </div>
+            <div class="item">
+                <div class="item" ng-controller="RulepluginCtrl">
+                    <div class="gridStyle RulegridStyle" ui-grid="gridOptions"></div>
+                </div>
 
-    <!--modal编辑规则名称-->
-    <div class="modal fade" id="editRuleName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">
-                        编辑规则名称
-                    </h4>
+                <div class="item" ng-controller="RulefilterCtrl">
+                    <div class="gridStyle RulegridStyle" ui-grid="gridOptions" style="height: 170px"></div>
                 </div>
-                <div class="modal-body">
-                    <p>规则名：<input type="text" name="NewDGName" value="System Telemetry Rule"></input>
-                    </p>
+            </div>
+
+        </div>
+
+        <!--modal编辑规则名称-->
+        <!--div class="modal fade" id="editRuleName" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            编辑规则名称
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>规则名：<input type="text" placeholder="{{Ruleitem.name}}"
+                                      ng-model="$parent.editrulename"></input>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="editRuleName()">
+                            确定
+                        </button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
-                    </button>
+            </div>
+        </div-->
+
+        <!--modal编辑规则描述-->
+        <!--div class="modal fade" id="editRuleDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            编辑规则描述
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>规则名称：System Telemetry Rule</p>
+                        <p>规则描述：<input type="text" name="NewDGName" id="RuleModalInput"></input>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            确定
+                        </button>
+                    </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
+            </div>
+        </div-->
+
+        <!--modal删除规则-->
+        <div class="modal fade" id="delRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            删除规则
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        确定删除此规则？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="delRule()">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!--modal运行-激活规则-->
+        <div class="modal fade" id="startRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            激活规则
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        确定激活此规则？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="startRule()">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!--modal运行-暂停规则-->
+        <div class="modal fade" id="stopRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            暂停规则
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        确定停止运行此规则？
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" ng-click="stopRule()">
+                            确定
+                        </button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
     </div>
-
-    <!--modal编辑规则描述-->
-    <div class="modal fade" id="editRuleDes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">
-                        编辑规则描述
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <p>规则名称：System Telemetry Rule</p>
-                    <p>规则描述：<input type="text" name="NewDGName" id="RuleModalInput"></input>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
     </div>
-
-
-    <!--modal删除设备组-->
-    <div class="modal fade" id="delRule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                        删除规则
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    确定删除此规则？
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        确定
-                    </button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal -->
-    </div>
-
-</div>

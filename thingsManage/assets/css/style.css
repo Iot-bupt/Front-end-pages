@@ -236,7 +236,7 @@ ul,li{
    Rule
  ============================================================ */
 .RulegridStyle{
-    height: 140px;
+    height: 60px;
 }
 .RuleBtn{
     width:175px ;
@@ -250,8 +250,17 @@ ul,li{
 .ruleicon{
     margin:0 5px;
 }
+.ruleicon:hover{
+    color: #df5b58;
+}
 #RuleModalInput{
     margin-top: 15px;
     width: 450px;
     height: 125px;
+}
+.stateActive{
+    color: #33ce2d;
+}
+.stateNActive{
+    color: #ff5945;
 }
