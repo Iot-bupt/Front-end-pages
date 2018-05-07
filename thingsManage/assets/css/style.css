@@ -1,8 +1,4 @@
 ﻿
-
-
-
-
 /*======================================
     GENERAL STYLES
 ======================================= */
@@ -10,43 +6,33 @@
 .b-clr {
     color:#000;
 }
-.quick-info {
-    font-family: 'Lobster', cursive;
-    font-size: 20px;
-}
-
-.sec-logo {
-    padding-top:15px;
-    padding-bottom:10px;
-}
 .sec-menu {
     background-color:#305680;
     padding-top:20px;
     padding-bottom:15px;
     color:#fff;
     font-size:22px;
-}
-.header-line {
-    font-weight:900;
-    padding-bottom:25px;
-    padding-top:30px;
-    border-bottom:1px solid #eeeeee;
-    text-transform:uppercase;
-}
-.pad-botm {
-    padding-bottom:15px;
+
 }
 .content-wrapper {
     min-height:1000px;
     background: rgb(238,238,238);
 }
-.copyrights{
-	text-indent:-9999px;
-	height:0;
-	line-height:0;
-	font-size:0;
-	overflow:hidden;
+/* =============================================================
+HEAD MENU STYLES
+============================================================ */
+#quit{
+
+   float: right;
 }
+
+#backIcon{
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+
 /* =============================================================
    SIDE MENU STYLES
  ============================================================ */
@@ -70,7 +56,7 @@
     }
 
         #side-menu ul li {
-            border-bottom: 1px solid #3BA551;
+            border-bottom: 1px solid #cccccc;
             padding: 20px 25px;
         }
 
@@ -88,27 +74,7 @@
     cursor: pointer;
 }
 
-/*======================================
-    DASHBOARD STYLES
-======================================= */
 
-
-
-/* =============================================================
-   FOOTER SECTION STYLES
- ============================================================ */
-.footer-section {
-    padding:25px 50px 25px 50px;
-    color:#000;
-    font-size:13px;
-      text-align:right;
-       border-top:5px solid #000;
-
-}
-
-    .footer-section a, .footer-section a:hover {
-        color:#000;
-    }
 
 
 /* =============================================================
@@ -150,7 +116,7 @@ ul,li{
     margin-left: 50px;
     cursor: pointer;
     padding: 20px;
-    width: 100px;
+    width: 150px;
     height: 100px;
     border: 1px solid #305680;
     float: left;
@@ -168,14 +134,31 @@ ul,li{
     text-align: center;
     margin-top: 10px;
 }
-/* =============================================================
-   DeviceGroup
- ============================================================ */
-.LeftView{
-    margin:30px 0 0 35px;
+
+#deviceListIcon{
+    width: 60%;
     float: left;
-    width:600px;
+
 }
+
+#deviceListChart{
+    width: 40%;
+    float: left;
+    margin-top: 50px;
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    /*position: fixed;
+    right: 30px;
+    height: 30px;*/
+}
+
+.attName{
+  font-weight: bold;
+}
+
+
+
+
 
 .DGTitle{
     margin:5px 0 0 10px;
@@ -264,3 +247,4 @@ ul,li{
 .stateNActive{
     color: #ff5945;
 }
+

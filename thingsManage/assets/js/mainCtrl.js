@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp",["ngRoute","ngAnimate",'ui.grid','ngResource']);
+var mainApp = angular.module("mainApp",["ngRoute","ngAnimate","ngResource"]);
 mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
@@ -28,6 +28,14 @@ mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$l
         })
         .when("/evaluate",{
             templateUrl:"evaluate.html",
+            controller:"mainCtrl"
+        })
+        .when("/customer",{
+            templateUrl:"customer.html",
+            controller:"mainCtrl"
+        })
+        .when("/tenant",{
+            templateUrl:"tenant.html",
             controller:"mainCtrl"
         })
         .otherwise({
