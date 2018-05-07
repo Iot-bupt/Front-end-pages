@@ -17,12 +17,13 @@ $(document).ready(function() {
     	$(this).removeClass('input-error');
     });
     
-    $('.login-form').on('submit', function(e) {
+    $('#login,#modify,#save').on('click', function(e) {
     	
-    	$(this).find('input[type="text"], input[type="password"], textarea').each(function(){
+    	$(".login-form").find('input[type="text"], input[type="password"], textarea').each(function(){
     		if( $(this).val() == "" ) {
     			e.preventDefault();
     			$(this).addClass('input-error');
+
     		}
     		else {
     			$(this).removeClass('input-error');

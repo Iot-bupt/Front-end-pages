@@ -21,12 +21,8 @@ $(document).ready(function () {
                     window.location.href = "chooseIndex.html";
                 }
                 else if($("#form-username").val() && $("#form-password").val()){
-                    /*window.event.returnValue = false;
-                    setTimeout(function () {
-                       toastr.error("用户名或密码错误！");
-                   },1000);*/
-
-                   alert("用户名或密码错误！");
+                   toastr.error("用户名或密码错误！");
+                   // alert("用户名或密码错误！");
                 }
             }
         });
@@ -48,7 +44,8 @@ $(document).ready(function () {
                     window.location.href = "modifyPassword.html";
                 }
                 else if($("#form-username").val() && $("#form-password").val()){
-                    alert("用户名或密码错误！");
+                    // alert("用户名或密码错误！");
+                    toastr.error("用户名或密码错误！");
                 }
             }
         });
@@ -63,27 +60,7 @@ $(document).ready(function () {
     /*
        保存修改
     */
-    $("#save").click(function (event) {
-        /*输入框效果*/
-        $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
-            $(this).removeClass('input-error');
-        });
-
-        $('.login-form').on('submit', function(e) {
-
-            $(this).find('input[type="text"], input[type="password"], textarea').each(function(){
-                if( $(this).val() == "" ) {
-                    e.preventDefault();
-                    $(this).addClass('input-error');
-                }
-                else {
-                    $(this).removeClass('input-error');
-
-                }
-            });
-
-        });
-
+    $("#save").click(function () {
         $.ajax({
             url:"http://localhost:5501/my-objects",
             //data:$("#form-username").val(),
@@ -94,15 +71,22 @@ $(document).ready(function () {
                         if ($("#newPassword").val() == $("#newPasswordAgain").val() && $("#currentPassword").val() == msg[0].password) {
                             //msg[0].password = $("#newPassword").val();
                             //toastr.error("用户名或密码错误！");
-                            alert("修改成功！将为您跳转到登录页面");
-                            window.location.href = "index.html";
+                            // alert("修改成功！将为您跳转到登录页面");
+                            toastr.success("修改成功！3秒后将为您跳转到登录页面");
+                            setTimeout(function () {
+                                window.location.href = "index.html";
+                            },2000);
+
+
 
                         }
                         else if ($("#currentPassword").val() != msg[0].password) {
-                            alert("原密码输入错误！");
+                            //alert("原密码输入错误！");
+                            toastr.error("原密码输入错误！");
                         }
                         else {
-                            alert("两次输入的新密码不相同！");
+                            //alert("两次输入的新密码不相同！");
+                            toastr.error("两次输入的新密码不相同！");
                         }
                 }
             }
@@ -114,7 +98,5 @@ $(document).ready(function () {
 
 
 
-    /*$("#chufa").click(function () {
-        toastr.success("success");
-    })*/
+
 });
