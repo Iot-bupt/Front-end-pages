@@ -1,128 +1,116 @@
-﻿<!DOCTYPE html>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>BEST ADMIN TEMPLATE</title>
-    <!-- BOOTSTRAP CORE STYLE CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONTAWESOME STYLE CSS -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE CSS -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <!-- GOOGLE FONT CSS -->
-     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
-
-</head>
-<body>
-   <!--  <section class="sec-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="assets/img/logo-vrinda.png" alt="Free Best Admin Made Of Bootstrap" />
-                </div>
-                <div class="col-md-7">
-                </div>
-                <div class="col-md-3 quick-info">
-                  Support :<i> info@yourdomain.com</i> <br />
-                    Call : <i>+01-345-908-55-89</i>
-                </div>
-            </div>
-        </div>
-    </section>-->
-    <!--LOGO SECTION END-->
-     <section class="sec-menu" >
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-              <span class="menu-open-icon">  <i class="fa fa-bars pull-left fa-2x b-clr"   ></i> </span>  <i class="pull-right">欢迎来到物管理平台</i>
-                </div>
-            </div>
-        </div>
-    </section>
-       <div id="side-menu"  >
-
-         <ul  >
-             <li style="border-bottom:0px;">
-             <a href="#" title="close"> <i class="fa fa-close fa-2x menu-close-icon b-clr"></i></a>
-            </li>
-             <li class="side-menu-icon">
-                 <a href="homePage.html" title="首页"> <i class="fa fa-home fa-2x "></i> </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="deviceList.html" title="设备列表"> <i class="fa fa-file-text-o fa-2x "></i> </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="deviceGroup.html" title="设备组"> <i class="fa fa-cubes fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="service.html" title="服务管理"><i class="fa fa-cog fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="plugins.html" title="插件管理"> <i class="fa fa-plug fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="rules.html" title="规则管理"> <i class="fa fa-link fa-2x "></i>  </a>
-             </li>
-             <li class="side-menu-icon">
-                 <a href="evaluate.html" title="能力评估"> <i class="fa fa-line-chart fa-2x "></i>  </a>
-             </li>
-            
-        </ul>
-           
+﻿<div class="content-wrapper" ng-controller="serviceCtrl">
+    <div class="col-md-12">
+        <h4 class="header-line">插件管理
+            <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal"
+                    data-target="#addDeviceGroup">+ 创建插件
+            </button>
+            <span>
+                     <input class="span2" type="text" placeholder="搜索">
+                     <button><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+        </h4>
     </div>
-    <!--MENU SECTION END-->
-     <div class="content-wrapper">
-         <div class="container">
-        <div class="row pad-botm">
+    <div class="container">
+
+        <!--模块控件-->
+        <div class="chooseBtn homeIconBackgroundstyle">
+            <a href="" title="插件管理"><i class="fa fa-plug fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>
+                <i class="glyphicon glyphicon-ok">ACTIVE</i>
+            </span>
+            <p class="style">插件名称：{{manufacturer}}</p>
+            <p class="style">插件token：{{deviceType}}</p>
+            <p class="style"> 创建时间：{{unitType}}</p>
+            <br/>
+            <span class="postionOne">
+                       <a href="" title="激活/暂停"><i class="glyphicon glyphicon-off"></i></a>
+                   </span>
+            <span class="positionTwo">
+                       <a href="" title="删除插件"><i class="glyphicon glyphicon-trash"></i></a>
+                   </span>
+        </div>
+        <div class="chooseBtn homeIconBackgroundstyle">
+            <a href="" title="插件管理"><i class="fa fa-plug fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>
+                <i class="glyphicon glyphicon-ok">ACTIVE</i>
+            </span>
+            <p class="style">插件名称：{{manufacturer}}</p>
+            <p class="style">插件token：{{deviceType}}</p>
+            <p class="style"> 创建时间：{{unitType}}</p>
+            <br/>
+            <span class="postionOne">
+                      <a href="" title="激活/暂停"><i class="glyphicon glyphicon-off"></i></a>
+                   </span>
+            <span class="positionTwo">
+                       <a href="" title="删除插件"><i class="glyphicon glyphicon-trash"></i></a>
+                   </span>
+        </div>
+        <div class="chooseBtn homeIconBackgroundstyle">
+            <a href="" title="插件管理"><i class="fa fa-plug fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>
+                <i class="glyphicon glyphicon-remove">SUSPENDED</i>
+            </span>
+            <p class="style">插件名称：{{manufacturer}}</p>
+            <p class="style">插件token：{{deviceType}}</p>
+            <p class="style"> 创建时间：{{unitType}}</p>
+            <br/>
+            <span class="postionOne">
+                       <a href="" title="激活/暂停"><i class="glyphicon glyphicon-off"></i></a>
+                   </span>
+            <span class="positionTwo">
+                       <a href="" title="删除插件"><i class="glyphicon glyphicon-trash"></i></a>
+                   </span>
+        </div>
+        <div class="chooseBtn homeIconBackgroundstyle">
+            <a href="" title="插件管理"><i class="fa fa-plug fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>
+                <i class="glyphicon glyphicon-ok">ACTIVE</i>
+            </span>
+            <p class="style">插件名称：{{manufacturer}}</p>
+            <p class="style">插件token：{{deviceType}}</p>
+            <p class="style"> 创建时间：{{unitType}}</p>
+            <br/>
+            <span class="postionOne">
+                        <a href="" title="激活/暂停"><i class="glyphicon glyphicon-off"></i></a>
+                   </span>
+            <span class="positionTwo">
+                       <a href="" title="删除插件"><i class="glyphicon glyphicon-trash"></i></a>
+                   </span>
+        </div>
+        <div class="chooseBtn homeIconBackgroundstyle">
+            <a href="" title="插件管理"><i class="fa fa-plug fa-2x"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>
+                <i class="glyphicon glyphicon-remove">SUSPENDED</i>
+            </span>
+            <p class="style">插件名称：{{manufacturer}}</p>
+            <p class="style">插件token：{{deviceType}}</p>
+            <p class="style"> 创建时间：{{unitType}}</p>
+            <br/>
+            <span class="postionOne">
+                        <a href="" title="激活/暂停"><i class="glyphicon glyphicon-off"></i></a>
+                   </span>
+            <span class="positionTwo">
+                       <a href="" title="删除插件"><i class="glyphicon glyphicon-trash"></i></a>
+                   </span>
+
+        </div>
+    </div>
+</div>
+<!--made in card-->
+
+<!-- CONTENT-WRAPPER SECTION END-->
+<section class="footer-section">
+    <div class="container">
+        <div class="row">
             <div class="col-md-12">
-                <h4 class="header-line">BLANK PAGE</h4>
-                
-                            </div>
-
-        </div>
-             <div class="row">
-            <div class="col-md-12">
-               <div class="alert alert-success">
-This is blank page for your customization. So use this page and start your project now.
-                   <br />
-                   Happy downloading 
-                   <br />
-                  Keep Looking <a target="_blank" href="http://#/" >binarytheme.com</a> for cool stuff.
-               </div>
-                            </div>
-
-        </div>  
-    </div>
-    </div>
-     <!-- CONTENT-WRAPPER SECTION END-->
-    <section class="footer-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                   &copy; 2014 Yourdomain.com |More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> 
-                </div>
-
+                &copy; 2018 Yourdomain.com |More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">物管理</a> - Collect from <a href="http://www.cssmoban.com/" title="服务管理" target="_blank">服务管理</a>
             </div>
-        </div>
-    </section>
-      <!-- FOOTER SECTION END-->
 
-    
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  -->
-    <script src="assets/js/jquery-1.11.1.js"></script>
-   <!--ICON SCRIPTS-->
-   <script type="text/javascript" src="assets/js/icon.js"></script>
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="assets/js/bootstrap.js"></script>
-     <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
-</body>
-</html>
+        </div>
+    </div>
+</section>
