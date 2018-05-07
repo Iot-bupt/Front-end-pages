@@ -1,14 +1,17 @@
 mainApp.controller("DevGroupCtrl", function ($scope, $resource) {
     //获取设备组
     $scope.showAll = true;
-    var Devicegroup = $resource('http://localhost:8081/person');
-    $scope.DeviceGroups = Devicegroup.query();
+    var Devicegroup = $resource('http://localhost:8082/person');
+    $scope.DeviceGroups = Devicegroup.query(function(){
+        //初始化右侧视图
+        $scope.item = $scope.DeviceGroups[0];
+    });
 
 
     //添加设备组
     $scope.addDG=function () {
         if ($scope.addDGName != "" && $scope.addDGName != null){
-            var addDG = $resource('http://localhost:8081/person');
+            var addDG = $resource('http://localhost:8082/person');
             addDG.save({},$scope.addDGName)
                 .$promise.then(function (resp) {
                 console.log("新建设备组成功");
@@ -23,7 +26,7 @@ mainApp.controller("DevGroupCtrl", function ($scope, $resource) {
     //查找设备组
     $scope.searchDG = function () {
         if ($scope.dgname != "" && $scope.dgname != null) {
-            var searchDG = $resource('http://localhost:8081/person/:name', {name: '@name'});
+            var searchDG = $resource('http://localhost:8082/person/:name', {name: '@name'});
             searchDG.get({name: $scope.dgname})
                 .$promise.then(function (person) {
                 console.log("文本框输入内容：" + $scope.dgname);
@@ -46,7 +49,7 @@ mainApp.controller("DevGroupCtrl", function ($scope, $resource) {
 
     //删除设备组
     $scope.delDG = function () {
-        var delDG = $resource('http://localhost:8081/person/:id', {id: '@id'});
+        var delDG = $resource('http://localhost:8082/person/:id', {id: '@id'});
         delDG.delete({}, {id: $scope.item.id}, function (resp) {
             console.log("删除成功:id=" + $scope.item.id + ";name=" + $scope.item.name);
             $("#delDG").modal("hide");
@@ -60,7 +63,7 @@ mainApp.controller("DevGroupCtrl", function ($scope, $resource) {
     //编辑设备组名
     $scope.editDGName=function(){
         if ($scope.editdg != "" && $scope.editdg != null){
-            var editDG = $resource('http://localhost:8081/person/:id', {id: '@id'});
+            var editDG = $resource('http://localhost:8082/person/:id', {id: '@id'});
             editDG.save({id: $scope.item.id},$scope.editdg)
                 .$promise.then(function (resp) {
                 console.log("信息修改成功:id=" + $scope.item.id + ";name=" + $scope.item.name);

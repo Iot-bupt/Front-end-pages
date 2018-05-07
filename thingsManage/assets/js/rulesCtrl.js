@@ -11,9 +11,9 @@ mainApp.controller("RuleCtrl", function ($scope, $resource) {
         //初始化右侧视图
         $scope.Ruleitem = $scope.Rules[0];//Rules[0]获取不到第一个对象咋弄？为啥必须在函数里？
         //console.log($scope.Rules);//此时打印是数组
-        //console.log("取第一个对象：" + $scope.Ruleitem);
+        console.log("取第一个对象：" + $scope.Ruleitem);
         $scope.$broadcast('senddata', $scope.Ruleitem);
-        if ($scope.Ruleitem.state == "ACTIVE") {
+        if ($scope.Ruleitem.rule.state == "ACTIVE") {
             $scope.isActive = true;
             $scope.Rulestart = false;
             $scope.Rulestop = true;
@@ -30,7 +30,7 @@ mainApp.controller("RuleCtrl", function ($scope, $resource) {
     $scope.showrule = function (rule) {
         $scope.Ruleitem = rule;
         //判断规则运行状态
-        if ($scope.Ruleitem.state == "ACTIVE") {
+        if ($scope.Ruleitem.rule.state == "ACTIVE") {
             $scope.isActive = true;
             $scope.Rulestart = false;
             $scope.Rulestop = true;
@@ -54,7 +54,7 @@ mainApp.controller("RuleCtrl", function ($scope, $resource) {
                     $scope.showInfoRule = true;
                     $scope.showAllRule = false;
                     $scope.searchresult = person;
-                    console.log("接口返回对象：" + person.name + person.time + person.id.id);
+                    //console.log("接口返回对象：" + person.rule.name + person.rule.ruleId);
                 } else {
                     $scope.showInfoRule = false;
                     alert("无规则组[id=" + $scope.ruleid + "]信息，请输入正确设备组名!");
@@ -86,7 +86,7 @@ mainApp.controller("RuleCtrl", function ($scope, $resource) {
 
     //删除规则
     $scope.delRule = function () {
-        var delRULE = $resource('http://localhost:8081/api/rule/:id', {id: '@id'});
+        var delRULE = $resource('http://localhost:8081/api/rule/delete:id', {id: '@id'});
         delRULE.delete({}, {id: $scope.Ruleitem.id.id}, function (resp) {
             console.log("删除成功:id=" + $scope.Ruleitem.id.id + ";name=" + $scope.Ruleitem.name);
             $("#delDG").modal("hide");

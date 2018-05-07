@@ -20,7 +20,7 @@
                 <div class="chooseBtn RuleBtn" ng-click="showrule(rule)">
                     <div>
                         <i class="fa fa-puzzle-piece fa-2x "></i>
-                        <p>{{rule.name}}</p>
+                        <p>{{rule.rule.name}}</p>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="chooseBtn RuleBtn" ng-click="showrule(searchresult)">
                     <div>
                         <i class="fa fa-puzzle-piece fa-2x "></i>
-                        <p>{{searchresult.name}}</p>
+                        <p>{{searchresult.rule.name}}</p>
                     </div>
                 </div>
             </div>
@@ -80,15 +80,16 @@
                 </div>
             </div>
             <div class="item">
-                <p>规则名称：{{Ruleitem.name}}<!--规则名称修改按钮
+                <p>规则名称：{{Ruleitem.rule.name}}<!--规则名称修改按钮
                     <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
                        data-target="#editRuleName"></i>
                     </p.time}}  无此接口--></p>
-                <p>规则ID：{{Ruleitem.id.id}}</p>
+                <p>规则ID：{{Ruleitem.rule.ruleId}}</p>
                 <p>状态：<span ng-class="{true:'stateActive',false:'stateNActive'}[isActive]">
-                   {{Ruleitem.state}}
+
                     <i ng-class="{true:'fa fa-refresh fa-spin',false:'fa fa-refresh'}[isActive]"></i>
-                    </span></p>
+                    {{Ruleitem.rule.state}}
+                </span></p>
                 <p>规则描述：{{Ruleitem.additionalInfo}}<!--规则描述修改按钮
                     <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
                        data-target="#editRuleDes"></i>
@@ -108,7 +109,7 @@
                 </div>
 
                 <div class="item" ng-controller="RulefilterCtrl">
-                    <div class="gridStyle RulegridStyle" ui-grid="gridOptions" style="height: 170px"></div>
+                    <div class="gridStyle RulegridStyle" ui-grid="gridOptions" style="height: 180px"></div>
                 </div>
             </div>
 

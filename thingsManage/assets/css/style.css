@@ -197,9 +197,9 @@ ul,li{
  ============================================================ */
 .RightView{
     position: fixed;
-    margin:20px 5px 0 670px;
+    margin:35px 5px 0 670px;
     width:500px;
-    height:780px;
+    height:1000px;
 }
 .RightviewTitle{
     font-size: 20px;

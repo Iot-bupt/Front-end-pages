@@ -7,8 +7,8 @@
                     data-target="#addDeviceGroup">+ 创建设备组
             </button>
             <div class="SearchDG">
-                <span>搜索：<input type="text" style="width: 130px" placeholder="LIANG" ng-model="$parent.dgname"/></span>
-                <span class="Searchicon" ng-click="searchDG()">
+                <span>搜索：<input type="text" style="width: 130px" placeholder="输入设备组名称" ng-model="$parent.dgname"/></span>
+                <span class="Searchicon" ng-click="searchDG()" title="搜索">
                     <i class="fa fa-search fa-lg shand" aria-hidden="true"></i>
                 </span>
             </div>
@@ -68,14 +68,14 @@
             <div class="DGTitle DGminTitle">
                 <span class="RightviewTitle">设备组信息</span>
                 <div class="ruleiconcontainer" data-toggle="modal" data-target="#delDG">
-                    <i class="fa fa-trash-o fa-lg ruleicon shand"></i>
+                    <i class="fa fa-trash-o fa-lg ruleicon shand" title="删除"></i>
                 </div>
             </div>
             <div class="item">
                 <p>
                     设备组名：{{item.name}}
                     <i class="fa fa-pencil-square-o iedit shand" data-toggle="modal"
-                       data-target="#editDGName"></i>
+                       data-target="#editDGName" title="编辑设备组名"></i>
                     </p.time}}</p>
                 <p>创建时间：{{item.time}}</p>
                 <p>设备组ID：{{item.id}}</p>
