@@ -13,7 +13,6 @@ mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$l
         .when("/deviceGroup",{
             templateUrl:"deviceGroup.html",
             controller:"mainCtrl"
-
         })
         .when("/service",{
             templateUrl:"service.html",
@@ -43,6 +42,7 @@ mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$l
             redirectTo:"/homePage"
         });
 }]);
+
 mainApp.controller("mainCtrl",["$scope","$location",function ($scope,$location) {
     /*路由跳转*/
     $scope.$location = $location;

@@ -1,35 +1,98 @@
-mainApp.controller("DevGroupCtrl", ["$scope", function ($scope) {
-    $scope.DeviceGroups = [
-        {name: 'LIANG', time: '2018-04-13 15:57:55', id: '5ffa1c20-3ef0-11e8-8ea3-6dcd3accf4d6'},
-        {name: 'SUNSHINE', time: '2018-04-22 21:57:55', id: '5ffa1c20-4wdb-11e8-8ea3-6dcd3accf4d6'},
-        {name: 'TEMPER', time: '2018-06-23 21:57:55', id: '5ffa1c20-4wdb-11e8-8ea3-6dcd3accf4d6'},
-        {name: 'MOUSE', time: '2018-05-21 21:57:55', id: '5fds1c20-4wdb-11e8-8ea3-6dcd3accf4d6'},
-        {name: 'WIFI', time: '2018-08-2 21:57:55', id: '5ffaw120-4wdb-11e8-8ea3-6dcd3accf4d6'},
-        {name: 'FILTER', time: '2018-12-12 21:57:55', id: '3daa1c20-4wdb-11e8-8ea3-6dcd3accf4d6'}
-    ];
-    //展示设备组详情
+mainApp.controller("DevGroupCtrl", function ($scope, $resource) {
+    //获取设备组
+    $scope.showAll = true;
+    var Devicegroup = $resource('http://localhost:8081/person');
+    $scope.DeviceGroups = Devicegroup.query();
+
+
+    //添加设备组
+    $scope.addDG=function () {
+        if ($scope.addDGName != "" && $scope.addDGName != null){
+            var addDG = $resource('http://localhost:8081/person');
+            addDG.save({},$scope.addDGName)
+                .$promise.then(function (resp) {
+                console.log("新建设备组成功");
+                $("#editDGName").modal("hide");
+                location.reload();
+            });
+        }else{
+            alert("输入不能为空!");
+        }
+    }
+
+    //查找设备组
+    $scope.searchDG = function () {
+        if ($scope.dgname != "" && $scope.dgname != null) {
+            var searchDG = $resource('http://localhost:8081/person/:name', {name: '@name'});
+            searchDG.get({name: $scope.dgname})
+                .$promise.then(function (person) {
+                console.log("文本框输入内容：" + $scope.dgname);
+                if (person.name != undefined) {
+                    $scope.showInfo = true;
+                    $scope.showAll = false;
+                    $scope.searchresult = person;
+                    console.log("接口返回对象：" + person.name + person.time + person.id);
+                } else {
+                    $scope.showInfo = false;
+                    alert("无设备组[" + $scope.dgname + "]信息，请输入正确设备组名!");
+                }
+
+            });
+        }
+        else {
+            alert("输入不能为空!");
+        }
+    };
+
+    //删除设备组
+    $scope.delDG = function () {
+        var delDG = $resource('http://localhost:8081/person/:id', {id: '@id'});
+        delDG.delete({}, {id: $scope.item.id}, function (resp) {
+            console.log("删除成功:id=" + $scope.item.id + ";name=" + $scope.item.name);
+            $("#delDG").modal("hide");
+            location.reload();
+        }, function (resp) {
+            console.log("1234再来一次");
+            alert("删除失败，请重试！")
+        });
+    }
+
+    //编辑设备组名
+    $scope.editDGName=function(){
+        if ($scope.editdg != "" && $scope.editdg != null){
+            var editDG = $resource('http://localhost:8081/person/:id', {id: '@id'});
+            editDG.save({id: $scope.item.id},$scope.editdg)
+                .$promise.then(function (resp) {
+                console.log("信息修改成功:id=" + $scope.item.id + ";name=" + $scope.item.name);
+                $("#editDGName").modal("hide");
+                location.reload();
+            });
+        }else{
+            alert("输入不能为空!");
+        }
+    }
+
+
+    //右侧视图展示设备组详情
     $scope.show = function (DG) {
         //console.log(DG.name);
         $scope.item = {name: DG.name, time: DG.time, id: DG.id};
-
     };
 
     //ui-grid的js部分
-    $scope.myData = [{name: "天猫", style: "传感器",isIn:false},
-        {name: "阿里宝宝", style: "传感器",isIn:true},
-        {name: "百度", style: "蓝牙",isIn:true},
-        {name: "京东", style: "传感器",isIn:true},
-        {name: "腾讯", style: "蓝牙",isIn:false},
-        {name: "网易", style: "传感器",isIn:true},
-        {name: "Bilibili", style: "蓝牙",isIn:false},
-        {name: "AcFun", style: "传感器",isIn:false},
-        {name: "新浪", style: "蓝牙",isIn:false},
-        {name: "腾讯", style: "传感器",isIn:true},
-        {name: "京东", style: "传感器",isIn:true},
-        {name: "腾讯", style: "蓝牙",isIn:true},
-        {name: "网易", style: "传感器",isIn:true}];
-
-
+    $scope.myData = [{name: "天猫", style: "传感器", isIn: false},
+        {name: "阿里宝宝", style: "传感器", isIn: true},
+        {name: "百度", style: "蓝牙", isIn: true},
+        {name: "京东", style: "传感器", isIn: true},
+        {name: "腾讯", style: "蓝牙", isIn: false},
+        {name: "网易", style: "传感器", isIn: true},
+        {name: "Bilibili", style: "蓝牙", isIn: false},
+        {name: "AcFun", style: "传感器", isIn: false},
+        {name: "新浪", style: "蓝牙", isIn: false},
+        {name: "腾讯", style: "传感器", isIn: true},
+        {name: "京东", style: "传感器", isIn: true},
+        {name: "腾讯", style: "蓝牙", isIn: true},
+        {name: "网易", style: "传感器", isIn: true}];
 
     $scope.gridOptions = {
         data: 'myData',
@@ -45,15 +108,16 @@ mainApp.controller("DevGroupCtrl", ["$scope", function ($scope) {
 
     //弹出删除/关联信息modal
     $scope.goToDelete = function (row) {
-        if(row.entity.isIn){
-        angular.element('#warnDelAssign').modal({
-            backdrop: false
-        });
-        }else{
+        if (row.entity.isIn) {
+            angular.element('#warnDelAssign').modal({
+                backdrop: false
+            });
+        } else {
             angular.element('#warnAddAssign').modal({
                 backdrop: false
             });
-        };
+        }
+        ;
     };
 
-}]);
+});
