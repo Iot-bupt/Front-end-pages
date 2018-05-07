@@ -1,0 +1,64 @@
+﻿<div>
+    <div class="col-md-12">
+        <h4 class="header-line">服务管理</h4>
+    </div>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li>
+                <a href=""><span class="glyphicon glyphicon-th-list"></span> &nbsp;查看服务</a>
+            </li>
+            <li>
+                <div class="input-prepend">
+                <span class="positionThree">
+                     <input class="span2" id="inputIcon" type="text" placeholder="搜索">
+                     <button href=""><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>服务名称</th>
+                    <th>服务类型</th>
+                    <th>服务描述</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="success">
+                    <td><a href="#/showOrder/1102">1102</a></td>
+                    <td>笔记本电脑</td>
+                    <td>001</td>
+                    <td><button class="btn btn-sm btn-danger"><a href="">删除</a> </button></td>
+                </tr>
+                <tr class="info">
+                    <td><a href="#/showOrder/4531">4531</a></td>
+                    <td>移动硬盘</td>
+                    <td>002</td>
+                    <td><button class="btn btn-sm btn-danger"><a href="">删除</a> </button></td>
+                </tr>
+                <tr class="active">
+                    <td><a href="#/showOrder/4531">1036</a></td>
+                    <td>IPhone</td>
+                    <td>003</td>
+                    <td><button class="btn btn-sm btn-danger"><a href="">删除</a> </button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="positionFour">
+            <button  type="sbmit" class="btn btn-sm btn-info">
+                <span class="glyphicon glyphicon-refresh"></span>
+                刷新
+            </button>&nbsp;&nbsp;
+            <button type="reset" class="btn btn-sm btn-info"><a href="" title="查看服务" ng-click="$location.path('/service')">
+                <span class="glyphicon glyphicon-repeat" style="color:whitesmoke;"></span>
+                <span style="color: whitesmoke;">返回</span> </a>
+            </button>
+        </div>
+    </div>
+</div>
+
