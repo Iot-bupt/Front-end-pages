@@ -9,7 +9,9 @@ mainApp.controller("RulefilterCtrl",function($scope){
         data: 'myData',
         enableHorizontalScrollbar : 0,
         columnDefs: [
-            {field: 'filter',displayName: '过滤器名称'}
+            {field: 'name',displayName: '过滤器名称'},
+            {field: 'filterId',displayName: '过滤器ID'},
+            {field: 'type',displayName: '类型'}
            ]};
 
 });
