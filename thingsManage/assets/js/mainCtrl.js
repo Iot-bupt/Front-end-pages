@@ -1,4 +1,4 @@
-var mainApp = angular.module("mainApp",["ngRoute","ngAnimate","ngResource"]);
+var mainApp = angular.module("mainApp",["ngRoute","ngAnimate","ui.grid","ngResource"]);
 mainApp.config(["$routeProvider","$locationProvider",function ($routeProvider,$locationProvider) {
     $locationProvider.hashPrefix("");
     $routeProvider
