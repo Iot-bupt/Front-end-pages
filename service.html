@@ -1,0 +1,42 @@
+﻿<div class="content-wrapper" ng-controller="serviceCtrl">
+    <div class="col-md-12"><!--底线到达位置-->
+        <h4 class="header-line">服务管理
+            <button style="margin-left:5px" class="btn btn-primary btn-sm" data-toggle="modal"
+                    data-target="#addDeviceGroup">+ 创建服务组
+            </button>
+                <span>
+                     <input class="span2" type="text" placeholder="搜索">
+                     <button><i class="glyphicon glyphicon-search"></i></button>
+                </span>
+        </h4>
+        <!--模块控件-->
+           <div class="container">
+                <div class="chooseBtn homeIconBackgroundstyle">
+                    <span title="服务管理"><i class="fa fa-cog homeIconstyle"></i></span>
+                    <p class="style">厂商：{{manufacturer}}</p>
+                    <p class="style">设备类型：{{deviceType}}</p>
+                    <p class="style"> 设备型号：{{unitType}}</p>
+                    <br/>
+                    <span class="postionOne">
+                        <a href="#/service" title="创建服务"><i class="glyphicon glyphicon-plus"></i></a>
+                   </span>
+                    <span class="positionTwo">
+                       <a href="#/service" title="删除服务组"><i class="glyphicon glyphicon-trash"></i></a>
+                   </span>
+                </div>
+            </div>
+    </div>
+</div>
+	<!--弹出的服务组下的服务列表-->
+
+<!-- CONTENT-WRAPPER SECTION END-->
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   &copy; 2018 Yourdomain.com |More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">物管理</a> - Collect from <a href="http://www.cssmoban.com/" title="服务管理" target="_blank">服务管理</a> 
+                </div>
+
+            </div>
+        </div>
+    </section>
